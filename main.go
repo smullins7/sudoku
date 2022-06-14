@@ -1,8 +1,12 @@
 package main
 
-import "github.com/smullins7/sudoku/board"
+import (
+	"github.com/smullins7/sudoku/board"
+	"os"
+)
 
 func main() {
-	b := board.NewBoardFromFile("inputs/board-1.txt")
+	boardFilename := os.Args[1]
+	b := board.NewBoardFromFile(boardFilename)
 	board.PrintBoard(b)
 }
